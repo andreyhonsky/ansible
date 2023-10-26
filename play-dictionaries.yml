@@ -1,0 +1,39 @@
+- hosts: localhost
+  gather_facts: no
+
+  vars:
+    bands:
+      The Beatles:
+        drums: Ringo Star
+        bass: Paul McCartney
+        guitar:
+          - George Harrison
+          - John Lennon
+        vocals:
+          - John Lennon
+          - Paul McCartney
+          - George Harrison
+          - Ringo Star
+
+    bands2: ['The Beatles', 'Led Zeppelin', 'The Police', 'Rush']
+
+  tasks:
+  # - name: T01 - List bands 1
+  #   ansible.builtin.debug:
+  #     msg: "{{ bands }}"
+
+  # - name: select element
+  #   ansible.builtin.debug:
+  #     msg: "{{ bands }}"
+
+  # - name: T02 - Select element based on band name
+  #   ansible.builtin.debug:
+  #     msg: "{{ bands | selectattr('name','equalto','The Beatles') }}"
+
+  - name: T02 - Select element based on band name
+    ansible.builtin.debug:
+      msg: "{{ bands['The Beatles']}}"
+
+  - name: T03 - Show keys of highest level dictionary
+    ansible.builtin.debug:
+      msg: "{{ bands2.1 }}"

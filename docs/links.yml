@@ -1,0 +1,8 @@
+- links:
+  - dictionaries in Ansible: 
+    https://www.redhat.com/sysadmin/ansible-lists-dictionaries-yaml
+  - remote development using ssh: 
+    https://code.visualstudio.com/docs/remote/ssh
+
+  - How to fix docker Got permission denied while trying to connect to the Docker daemon socket:
+    https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket
