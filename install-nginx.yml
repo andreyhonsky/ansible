@@ -5,10 +5,21 @@
 
   tasks:
   - name: Install Nginx Web Server on RedHat Family
-  yum:
-    name: nginx
-    state: latest
-  when:
-    ansible_os_family == "RedHat"
-  notify:
-    - nginx systemd
+    yum:
+      name: nginx
+      state: latest
+
+  - name: Create home directory for www
+    file:
+      path: /var/www/
+      state: directory
+
+  - name: nginx restart
+    service:
+      name: nginx
+      state: restarted
+
+  - name: check port
+    wait_for:
+      port: 8080
+      delay: 10
