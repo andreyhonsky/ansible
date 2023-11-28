@@ -1,8 +1,8 @@
 pipeline {
-    agent any
-    stage('Execute ansible playbook') {
-        steps {
-            sh 'ansible-playbook install-nginx.yml -vv'
-        }
+    agent andreyhonsky
+stage ('Deploy nginx to server') {
+    steps {
+        sh 'ansible-playbook install-nginx.yml -v'
     }
+}
 }
