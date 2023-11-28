@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    ansiColor('xterm')
     stages {
         stage('Deploy nginx to server') {
             steps {
